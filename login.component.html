@@ -1,0 +1,47 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <form>
+              <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+
+
+                <div class="form-outline form-white mb-4">
+                  <input formControlName="userName" type="text" class="form-control form-control-lg"
+                    placeholder="Username" /><br>
+                  <span class="text-danger"
+                    *ngIf="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')">*Username
+                    is required</span>
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <input formControlName="pswrd" type="password" class="form-control form-control-lg"
+                    placeholder="Password" />
+                  <span class="text-danger"
+                    *ngIf="loginForm.controls['pswrd'].dirty && loginForm.hasError('required','pswrd')">*Password is
+                    required</span>
+
+                </div>
+
+                <button class="btn btn-outline-light btn-lg px-5" type="submit"
+                  [disabled]="!loginForm.valid">LogIn</button>
+
+
+
+
+              </form>
+
+              <a href="\signup" class="text-white-50 fw-bold">New User? Click to SignUp</a>
+
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <form>
+                            <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                                <!-- <div class="mb-md-5 mt-md-4 pb-5"> -->
+
+                                    <h2 class="fw-bold mb-2 text-uppercase">SignUp Now</h2>
+                                    <p class="text-white-50 mb-5">Please enter your details!
+
+                                    </p>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input formControlName="fullName" type="text"
+                                            class="form-control form-control-lg" placeholder="Full Name" />
+                                            <span class="text-danger" *ngIf="signupForm.controls['fullName'].dirty && signupForm.hasError('required','fullName')">*Fullname is required</span>
+                                    </div>
+                                    <div class="form-outline form-white mb-4">
+                                        <input formControlName="mobile" type="text" class="form-control form-control-lg"
+                                            placeholder="Mobile Number" />
+                                            <span class="text-danger" *ngIf="signupForm.controls['mobile'].dirty && signupForm.hasError('required','mobile')">*Mobile number is required</span>
+                                    </div>
+                                    <div class="form-outline form-white mb-4">
+                                        <input formControlName="username" type="text"
+                                            class="form-control form-control-lg" placeholder="Username or email" />
+                                            <span class="text-danger" *ngIf="signupForm.controls['username'].dirty && signupForm.hasError('required','username')">*Username is required</span>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input formControlName="pswrd" type="password"
+                                            class="form-control form-control-lg" placeholder="Password" />
+                                            <span class="text-danger" *ngIf="signupForm.controls['pswrd'].dirty && signupForm.hasError('required','pswrd')">*Password is required</span>
+                                    </div>
+                                    <div class="form-outline form-white mb-4">
+                                        <select formControlName="usertype" class="form-select" aria-label="Default select example">
+                                            <option selected value="" class="text-muted">Select User type</option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="Employee">Employee</option>
+                                          </select>
+                                          <span class="text-danger" *ngIf="signupForm.controls['usertype'].dirty && signupForm.hasError('required','usertype')">*Usertype is required</span>
+
+                                    </div> 
+                                    <button class="btn btn-outline-light btn-lg px-5" type="submit" [disabled]="!signupForm.valid">SignUp</button>
+
+
+
+                                <!-- </div> -->
+                            </form>
+                            <a href="\login" class="text-white-50 fw-bold">Already registered? Click to Login</a>
+                        </form>
+                                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
